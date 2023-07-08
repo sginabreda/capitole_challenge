@@ -1,7 +1,7 @@
 package com.capitole.challenge.application.config;
 
-import com.capitole.challenge.domain.model.ProductPriceRepository;
-import com.capitole.challenge.domain.usecase.GetProductPriceUseCase;
+import com.capitole.challenge.infrastructure.db.ProductPriceRepository;
+import com.capitole.challenge.domain.usecase.FindProductPriceUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class ProductPriceConfig {
 
     @Bean
-    public GetProductPriceUseCase getProductPriceUseCase(ProductPriceRepository repository) {
-        return new GetProductPriceUseCase(repository);
+    public FindProductPriceUseCase getProductPriceUseCase(ProductPriceRepository repository) {
+        return new FindProductPriceUseCase(repository);
     }
 }

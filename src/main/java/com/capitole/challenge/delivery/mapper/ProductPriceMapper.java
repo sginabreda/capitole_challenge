@@ -1,7 +1,7 @@
 package com.capitole.challenge.delivery.mapper;
 
-import com.capitole.challenge.delivery.dto.ProductPriceDto;
-import com.capitole.challenge.domain.model.ProductPrice;
+import com.capitole.challenge.delivery.dto.response.ProductPriceDto;
+import com.capitole.challenge.domain.entity.ProductPrice;
 
 public class ProductPriceMapper {
 

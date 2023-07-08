@@ -1,8 +1,8 @@
 package com.capitole.challenge.delivery;
 
-import com.capitole.challenge.delivery.dto.ProductPriceDto;
+import com.capitole.challenge.delivery.dto.response.ProductPriceDto;
 import java.time.LocalDateTime;
 
 public interface ProductPriceController {
-    ProductPriceDto getProductPrice(LocalDateTime date, Long productId, Long brandId);
+    ProductPriceDto findProductPrice(LocalDateTime date, Long productId, Long brandId);
 }

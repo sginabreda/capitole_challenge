@@ -32,6 +32,28 @@ public class ProductPriceModel {
     public ProductPriceModel() {
     }
 
+    public ProductPriceModel(
+            Long id,
+            Long brandId,
+            LocalDateTime startDate,
+            LocalDateTime endDate,
+            Integer priceList,
+            Long productId,
+            Integer priority,
+            BigDecimal price,
+            String currency
+    ) {
+        this.id = id;
+        this.brandId = brandId;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.priceList = priceList;
+        this.productId = productId;
+        this.priority = priority;
+        this.price = price;
+        this.currency = currency;
+    }
+
     public Long getId() {
         return id;
     }

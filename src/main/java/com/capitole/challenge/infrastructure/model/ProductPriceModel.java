@@ -32,6 +32,10 @@ public class ProductPriceModel {
     public ProductPriceModel() {
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public Long getBrandId() {
         return this.brandId;
     }

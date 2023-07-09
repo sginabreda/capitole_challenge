@@ -1,7 +1,7 @@
 package com.capitole.challenge.application.controller;
 
 import com.capitole.challenge.delivery.ProductPriceController;
-import com.capitole.challenge.delivery.dto.response.ProductPriceDto;
+import com.capitole.challenge.delivery.dto.ProductPriceDto;
 import com.capitole.challenge.delivery.mapper.ProductPriceMapper;
 import com.capitole.challenge.domain.entity.ProductPrice;
 import com.capitole.challenge.domain.usecase.FindProductPriceUseCase;

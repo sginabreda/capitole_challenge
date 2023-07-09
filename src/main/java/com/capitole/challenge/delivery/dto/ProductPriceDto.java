@@ -1,4 +1,4 @@
-package com.capitole.challenge.delivery.dto.response;
+package com.capitole.challenge.delivery.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -47,7 +46,7 @@ public class ProductPriceResourceFunctionalTest {
         repository.save(new ProductPriceModel(4L, 1L, LocalDateTime.parse("2020-06-15T16:00:00"), LocalDateTime.parse("2020-12-31T23:59:59"), 4, 35455L, 1, BigDecimal.valueOf(38.95), "EUR"));
     }
 
-    @ParameterizedTest(name = "Case #{index} - should return {3} record in PRICES")
+    @ParameterizedTest(name = "Case #{index} - should return the {3} record in PRICES")
     @CsvSource(value = {
             "2020-06-14T10:00:00,35455,1,first",
             "2020-06-14T16:00:00,35455,1,second",
@@ -65,7 +64,7 @@ public class ProductPriceResourceFunctionalTest {
         String finalUri = pricesControllerUri + "?date=" + date + "&productId=" + productId + "&brandId=" + brandId;
         String jsonResponse = new String(
                 Files.readAllBytes(
-                        ResourceUtils.getFile("classpath:json-expectations/" + expectedPricesRecord + ".json")
+                        ResourceUtils.getFile("classpath:prices-records/" + expectedPricesRecord + ".json")
                                 .toPath())
         );
         ProductPriceDto expectedDto = objectMapper.readValue(jsonResponse, ProductPriceDto.class);

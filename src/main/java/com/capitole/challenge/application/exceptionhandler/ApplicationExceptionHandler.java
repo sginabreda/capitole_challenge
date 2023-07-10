@@ -2,7 +2,6 @@ package com.capitole.challenge.application.exceptionhandler;
 
 import com.capitole.challenge.delivery.dto.ApiErrorDto;
 import com.capitole.challenge.domain.exception.ProductPriceNotFoundException;
-import jakarta.validation.ConstraintViolationException;
 import java.util.Objects;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -33,14 +32,6 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
             HttpStatusCode status,
             WebRequest request
     ) {
-        ApiErrorDto error = new ApiErrorDto(ErrorCode.BAD_REQUEST.code, ex.getMessage());
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body(error);
-    }
-
-    @ExceptionHandler(value = {ConstraintViolationException.class})
-    public ResponseEntity<ApiErrorDto> constraintViolationException(
-            ConstraintViolationException ex,
-            WebRequest request) {
         ApiErrorDto error = new ApiErrorDto(ErrorCode.BAD_REQUEST.code, ex.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body(error);
     }

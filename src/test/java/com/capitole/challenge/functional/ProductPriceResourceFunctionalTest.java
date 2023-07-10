@@ -31,8 +31,6 @@ public class ProductPriceResourceFunctionalTest {
     @Autowired
     private TestRestTemplate restTemplate;
     @Autowired
-    private ProductPriceRepository repository;
-    @Autowired
     private ObjectMapper objectMapper;
 
     private String pricesControllerUri;
@@ -40,10 +38,6 @@ public class ProductPriceResourceFunctionalTest {
     @BeforeEach
     void setUp() {
         pricesControllerUri = restTemplate.getRootUri() + "/prices";
-        repository.save(new ProductPriceModel(1L, 1L, LocalDateTime.parse("2020-06-14T00:00:00"), LocalDateTime.parse("2020-12-31T23:59:59"), 1, 35455L, 0, BigDecimal.valueOf(35.50), "EUR"));
-        repository.save(new ProductPriceModel(2L, 1L, LocalDateTime.parse("2020-06-14T15:00:00"), LocalDateTime.parse("2020-06-14T18:30:00"), 2, 35455L, 1, BigDecimal.valueOf(25.45), "EUR"));
-        repository.save(new ProductPriceModel(3L, 1L, LocalDateTime.parse("2020-06-15T00:00:00"), LocalDateTime.parse("2020-06-15T11:00:00"), 3, 35455L, 1, BigDecimal.valueOf(30.50), "EUR"));
-        repository.save(new ProductPriceModel(4L, 1L, LocalDateTime.parse("2020-06-15T16:00:00"), LocalDateTime.parse("2020-12-31T23:59:59"), 4, 35455L, 1, BigDecimal.valueOf(38.95), "EUR"));
     }
 
     @ParameterizedTest(name = "Case #{index} - should return the {3} record in PRICES")

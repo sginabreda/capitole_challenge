@@ -23,30 +23,10 @@ public class FindProductUseCaseIntegrationTest {
 
     @Autowired
     private FindProductPriceUseCase useCase;
-    @Autowired
-    private ProductPriceRepository repository;
-
-    private final ProductPriceModel priceModel = new ProductPriceModel(
-            1L,
-            1L,
-            LocalDateTime.parse("2020-06-14T10:00:00"),
-            LocalDateTime.parse("2020-12-31T23:59:59"),
-            1,
-            35455L,
-            0,
-            BigDecimal.valueOf(10L),
-            "EUR"
-    );
-
-    @AfterEach
-    void tearDown() {
-        repository.deleteAll();
-    }
 
     @Test
     void testFindProductPrice_shouldReturnPriceFound() {
         // Given
-        repository.save(priceModel);
         LocalDateTime date = LocalDateTime.parse("2020-06-14T11:00:00");
         Long productId = 35455L;
         Long brandId = 1L;
@@ -55,16 +35,15 @@ public class FindProductUseCaseIntegrationTest {
         ProductPrice productPrice = useCase.findProductPrice(date, productId, brandId);
 
         // Then
-        assertEquals(productPrice.productId(), priceModel.getProductId());
-        assertEquals(productPrice.brandId(), priceModel.getBrandId());
-        assertEquals(productPrice.priority(), priceModel.getPriority());
+        assertEquals(35455L, productPrice.productId());
+        assertEquals(1L, productPrice.brandId());
+        assertEquals(0, productPrice.priority());
         assertTrue(date.isAfter(productPrice.startDate()) && date.isBefore(productPrice.endDate()));
     }
 
     @Test
     void testFindProductPrice_whenNoRecordsFound_shouldThrowNotFoundException() {
         // Given
-        repository.save(priceModel);
         LocalDateTime date = LocalDateTime.parse("2020-06-13T10:00:00");
         Long productId = 35455L;
         Long brandId = 1L;

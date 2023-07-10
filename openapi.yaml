@@ -1,0 +1,127 @@
+swagger: '2.0'
+info:
+  title: Capitole Challenge
+  description: Implementation for Capitole Challenge
+  version: v2.0
+  contact:
+    name: Santiago Ginabreda
+    url: https://www.linkedin.com/in/santiago-ginabreda-12823563/
+host: localhost:8080
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  /prices:
+    get:
+      operationId: findProductPrice
+      summary: Find the price of a product for a Brand in a given date
+      description: Find the price of a product for a Brand in a given date
+      parameters:
+        - name: brandId
+          in: query
+          type: number
+          required: true
+          description: Brand ID of the product
+        - name: productId
+          in: query
+          type: number
+          required: true
+          description: Product ID
+        - name: date
+          in: query
+          type: string
+          format: date-time
+          required: true
+          description: Date of the price we want to look for.
+      responses:
+        '200':
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/ProductPriceDto'
+        '400':
+          description: 'Bad Request'
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/ApiErrorDto'
+            example:
+              code: "bad.request"
+              message: "Brand id parameter is required"
+        '404':
+          description: 'Product price not found with given parameters'
+          schema:
+            $ref: '#/definitions/ApiErrorDto'
+        '500':
+          description: 'Internal error'
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/ApiErrorDto'
+            example:
+              code: "internal.server.error"
+              message: "Internal server error"
+      tags:
+        - Prices
+definitions:
+  ProductPriceDto:
+    required:
+      - product_id
+      - brand_id
+      - price_list
+      - start_date
+      - end_date
+      - final_price
+      - currency
+    type: object
+    properties:
+      product_id:
+        title: Product ID
+        type: number
+        example: 35455
+      brand_id:
+        title: Brand ID
+        type: number
+        example: 1
+      price_list:
+        title: Price List
+        type: integer
+        example: 1
+      start_date:
+        title: Start date-time of the price
+        type: string
+        format: date-time
+        example: "2020-06-14T15:00:00"
+      end_date:
+        title: End date-time of the price
+        type: string
+        format: date-time
+        example: "2020-06-14T18:30:00"
+      final_price:
+        title: Final price
+        type: number
+        format: double
+        example: 35.45
+      currency:
+        title: Currency
+        type: string
+        example: EUR
+  ApiErrorDto:
+    required:
+      - code
+      - message
+    type: object
+    properties:
+      code:
+        title: Error code
+        type: string
+        example: "not.found"
+      message:
+        title: Error message
+        type: string
+        example: "Product price not found"
+tags:
+  - name: Prices
+    description: Operations related to product prices

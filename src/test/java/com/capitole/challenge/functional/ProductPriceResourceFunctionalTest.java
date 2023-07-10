@@ -1,7 +1,7 @@
 package com.capitole.challenge.functional;
 
-import com.capitole.challenge.delivery.dto.ApiErrorDto;
-import com.capitole.challenge.delivery.dto.ProductPriceDto;
+import com.capitole.challenge.delivery.dto.response.ApiErrorDto;
+import com.capitole.challenge.delivery.dto.response.ProductPriceDto;
 import com.capitole.challenge.infrastructure.db.ProductPriceRepository;
 import com.capitole.challenge.infrastructure.model.ProductPriceModel;
 import com.fasterxml.jackson.databind.ObjectMapper;

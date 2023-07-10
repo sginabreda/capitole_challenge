@@ -1,4 +1,4 @@
-package com.capitole.challenge.delivery.dto;
+package com.capitole.challenge.delivery.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;

@@ -1,10 +1,53 @@
-# capitole_challenge
-Challenge for Capitole Consulting
+# Capitole Consulting Challenge
 
+Index
+1) [Project structure](#project-structure)
+2) [How to run](#how-to-run)
+2) [Problem description](#problem-description)
+
+# Project structure
+
+The project follows a DDD (Domain Driven Design) structure, divided into the following four layers:
+- **Application**: contains objects related to the web framework, such as Beans, Exception Handler and Rest Controller.
+- **Delivery**: contains objects used by the application layer, such as DTOs and Controller interface. 
+- **Domain**: contains our domain classes and the business logic (use cases). Framework agnostic.
+- **Infrastructure**: contains classes and logic related to the persistence of our domain entities.
+
+The project is written in Java and uses Spring Boot as the underlying web framework. It also uses
+Flyway to manage database migrations.
+
+# How to run
+
+You'll first need to install Java 17.
+
+### Running the service with an IDE (i.e. IntelliJ IDEA)
+
+1) Clone the service to your computer using the command below
+
+``git clone git@github.com:sginabreda/capitole_challenge.git``
+
+2) Import the project into the IDE.
+
+3) Execute the main class `com.capitole.challenge.ChallengeApplication.java` to start the service.
+
+### Running the service without an IDE
+
+1) Clone the service to your computer using the command below
+
+``git clone git@github.com:sginabreda/capitole_challenge.git``
+
+2) Go inside the folder containing the project
+
+``cd capitole_challenge``
+
+3) Run the following command to start the application
+
+``./gradlew bootRun`` in Linux
+
+``gradlew.bat bootRun`` in Windows
 
 # Problem Description
 En la base de datos de comercio electrónico de la compañía disponemos de la tabla PRICES que refleja el precio final (pvp) y la tarifa que aplica a un producto de una cadena entre unas fechas determinadas. A continuación se muestra un ejemplo de la tabla con los campos relevantes:
-
 
 
 PRICES

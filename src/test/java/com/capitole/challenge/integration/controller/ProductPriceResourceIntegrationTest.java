@@ -32,7 +32,7 @@ public class ProductPriceResourceIntegrationTest {
     @MockBean
     private FindProductPriceUseCase useCase;
 
-    private final String date = "2020-06-14-11:00:00";
+    private final String date = "2020-06-14T11:00:00";
     private final String productId = "1";
     private final String brandId = "1";
 
@@ -55,7 +55,8 @@ public class ProductPriceResourceIntegrationTest {
                   "price_list": 1,
                   "start_date": "2020-06-14T10:00:00",
                   "end_date": "2020-12-31T23:59:59",
-                  "final_price": 34.55
+                  "final_price": 34.55,
+                  "currency": "EUR"
                 }
                 """;
 

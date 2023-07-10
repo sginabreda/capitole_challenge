@@ -8,6 +8,7 @@ import com.capitole.challenge.domain.entity.ProductPrice;
 import com.capitole.challenge.domain.usecase.FindProductPriceUseCase;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -24,7 +25,7 @@ public class ProductPriceResource implements ProductPriceController {
     }
 
     @Override
-    @GetMapping(produces = {"application/json"})
+    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseStatus(HttpStatus.OK)
     public ProductPriceDto findProductPrice(@Valid FindProductPriceRequest request) {
         ProductPrice productPrice = findProductPriceUseCase.findProductPrice(

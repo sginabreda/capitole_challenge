@@ -4,5 +4,6 @@
   "price_list": 1,
   "start_date": "2020-06-14T00:00:00",
   "end_date": "2020-12-31T23:59:59",
-  "final_price": 35.50
+  "final_price": 35.50,
+  "currency": "EUR"
 }

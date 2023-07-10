@@ -1,21 +1,19 @@
 package com.capitole.challenge.delivery.dto.response;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 public record ProductPriceDto(
-        @JsonProperty("product_id")
         Long productId,
-        @JsonProperty("brand_id")
         Long brandId,
-        @JsonProperty("price_list")
         Integer priceList,
-        @JsonProperty("start_date")
         LocalDateTime startDate,
-        @JsonProperty("end_date")
         LocalDateTime endDate,
-        @JsonProperty("final_price")
-        BigDecimal finalPrice
+        BigDecimal finalPrice,
+        String currency
 ) {
 }

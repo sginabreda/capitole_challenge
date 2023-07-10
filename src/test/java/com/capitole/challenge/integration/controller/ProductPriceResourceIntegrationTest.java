@@ -1,4 +1,4 @@
-package com.capitole.challenge.integration;
+package com.capitole.challenge.integration.controller;
 
 import com.capitole.challenge.application.controller.ProductPriceResource;
 import com.capitole.challenge.domain.entity.ProductPrice;

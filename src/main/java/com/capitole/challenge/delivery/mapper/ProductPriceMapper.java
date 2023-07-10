@@ -12,6 +12,7 @@ public class ProductPriceMapper {
                 productPrice.priceList(),
                 productPrice.startDate(),
                 productPrice.endDate(),
-                productPrice.price());
+                productPrice.price(),
+                productPrice.currency());
     }
 }

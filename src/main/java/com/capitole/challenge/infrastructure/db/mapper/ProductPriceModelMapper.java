@@ -1,4 +1,4 @@
-package com.capitole.challenge.infrastructure.mapper;
+package com.capitole.challenge.infrastructure.db.mapper;
 
 import com.capitole.challenge.domain.entity.ProductPrice;
 import com.capitole.challenge.infrastructure.model.ProductPriceModel;

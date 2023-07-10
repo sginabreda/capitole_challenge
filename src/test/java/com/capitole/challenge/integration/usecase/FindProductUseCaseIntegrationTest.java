@@ -1,4 +1,4 @@
-package com.capitole.challenge.integration;
+package com.capitole.challenge.integration.usecase;
 
 import com.capitole.challenge.domain.entity.ProductPrice;
 import com.capitole.challenge.domain.exception.ProductPriceNotFoundException;

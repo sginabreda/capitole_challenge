@@ -1,7 +1,7 @@
-package com.capitole.challenge.unit.infrastructure.mapper;
+package com.capitole.challenge.unit.infrastructure.db.mapper;
 
 import com.capitole.challenge.domain.entity.ProductPrice;
-import com.capitole.challenge.infrastructure.mapper.ProductPriceModelMapper;
+import com.capitole.challenge.infrastructure.db.mapper.ProductPriceModelMapper;
 import com.capitole.challenge.infrastructure.model.ProductPriceModel;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

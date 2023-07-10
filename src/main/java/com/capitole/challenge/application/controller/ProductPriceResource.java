@@ -5,9 +5,12 @@ import com.capitole.challenge.delivery.dto.ProductPriceDto;
 import com.capitole.challenge.delivery.mapper.ProductPriceMapper;
 import com.capitole.challenge.domain.entity.ProductPrice;
 import com.capitole.challenge.domain.usecase.FindProductPriceUseCase;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,12 +30,11 @@ public class ProductPriceResource implements ProductPriceController {
     @Override
     @GetMapping(produces = {"application/json"})
     @ResponseStatus(HttpStatus.OK)
-    public ProductPriceDto findProductPrice(
-            @DateTimeFormat(pattern = "yyyy-MM-dd-HH:mm:ss") @RequestParam LocalDateTime date,
-            @RequestParam(name = "product_id") Long productId,
-            @RequestParam(name = "brand_id") Long brandId
-    ) {
-        ProductPrice productPrice = findProductPriceUseCase.findProductPrice(date, productId, brandId);
+    public ProductPriceDto findProductPrice(@Valid FindProductPriceRequest request) {
+        ProductPrice productPrice = findProductPriceUseCase.findProductPrice(
+                request.getDate(),
+                Long.parseLong(request.getProductId()),
+                Long.parseLong(request.getBrandId()));
         return ProductPriceMapper.toDto(productPrice);
     }
 }

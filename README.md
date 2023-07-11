@@ -7,14 +7,25 @@ Index
 
 # Project structure
 
-The project follows a DDD (Domain Driven Design) structure, divided into the following four layers:
-- **Application**: contains objects related to the web framework, such as Beans, Exception Handler and Rest Controller.
-- **Delivery**: contains objects used by the application layer, such as DTOs and Controller interface. 
+The project follows a DDD (Domain Driven Design) structure, divided into the following three layers:
+- **Application**: contains objects related to the web framework, such as Beans, Exception Handler, Rest Controller and DTOs.
 - **Domain**: contains our domain classes and the business logic (use cases). Framework agnostic.
 - **Infrastructure**: contains classes and logic related to the persistence of our domain entities.
 
-The project is written in Java and uses Spring Boot as the underlying web framework. It also uses
-Flyway to manage database migrations.
+The project is written in Java and uses Spring Boot as the underlying web framework, with H2 as the database. 
+It also uses Flyway to manage database migrations.
+
+### Considerations:
+- The endpoint is `/prices` with all parameters as query params, as I thought it made the most sense. It can easily be changed to something like `/brands/{brandId}/products/{productId}/prices?date={date}`
+if there were more context about the service and the different use cases that it handles.
+- The endpoint doesn't have pagination as it only returns one record, but this can be an issue if the dataset
+starts to grow, and we have to scan the whole table.
+- The method in the repository is only called `findProductPrices` and it uses the Query annotation, because I thought
+using JPA naming for the method would end up in a really long name.
+- If the service started having more use cases and grew in complexity, and we didn't want to rely on one framework
+(be it because we thought it could change in the future), we could divide the application folder
+into two folders (application and delivery), and have just the HTTP layer (such as the controller) with the beans in application
+whereas in delivery we would have all the presentation logic.
 
 # How to run
 

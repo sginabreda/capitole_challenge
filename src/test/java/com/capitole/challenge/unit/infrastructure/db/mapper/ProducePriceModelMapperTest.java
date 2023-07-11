@@ -2,7 +2,7 @@ package com.capitole.challenge.unit.infrastructure.db.mapper;
 
 import com.capitole.challenge.domain.entity.ProductPrice;
 import com.capitole.challenge.infrastructure.db.mapper.ProductPriceModelMapper;
-import com.capitole.challenge.infrastructure.model.ProductPriceModel;
+import com.capitole.challenge.infrastructure.db.model.ProductPriceModel;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;

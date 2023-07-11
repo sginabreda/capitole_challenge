@@ -1,14 +1,11 @@
 package com.capitole.challenge.functional;
 
-import com.capitole.challenge.delivery.dto.response.ApiErrorDto;
-import com.capitole.challenge.delivery.dto.response.ProductPriceDto;
-import com.capitole.challenge.infrastructure.db.ProductPriceRepository;
-import com.capitole.challenge.infrastructure.model.ProductPriceModel;
+import com.capitole.challenge.application.dto.response.ApiErrorDto;
+import com.capitole.challenge.application.dto.response.ProductPriceDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.nio.file.Files;
-import java.time.LocalDateTime;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;

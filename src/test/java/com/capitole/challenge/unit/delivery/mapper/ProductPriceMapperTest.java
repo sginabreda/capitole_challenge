@@ -1,7 +1,7 @@
 package com.capitole.challenge.unit.delivery.mapper;
 
-import com.capitole.challenge.delivery.dto.response.ProductPriceDto;
-import com.capitole.challenge.delivery.mapper.ProductPriceMapper;
+import com.capitole.challenge.application.dto.response.ProductPriceDto;
+import com.capitole.challenge.application.dto.mapper.ProductPriceMapper;
 import com.capitole.challenge.domain.entity.ProductPrice;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

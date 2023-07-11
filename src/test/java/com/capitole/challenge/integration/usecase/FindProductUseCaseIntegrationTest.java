@@ -3,11 +3,9 @@ package com.capitole.challenge.integration.usecase;
 import com.capitole.challenge.domain.entity.ProductPrice;
 import com.capitole.challenge.domain.exception.ProductPriceNotFoundException;
 import com.capitole.challenge.domain.usecase.FindProductPriceUseCase;
-import com.capitole.challenge.infrastructure.db.ProductPriceRepository;
-import com.capitole.challenge.infrastructure.model.ProductPriceModel;
-import java.math.BigDecimal;
+
 import java.time.LocalDateTime;
-import org.junit.jupiter.api.AfterEach;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;

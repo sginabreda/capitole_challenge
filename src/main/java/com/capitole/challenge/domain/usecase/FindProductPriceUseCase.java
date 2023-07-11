@@ -4,7 +4,7 @@ import com.capitole.challenge.domain.entity.ProductPrice;
 import com.capitole.challenge.domain.exception.ProductPriceNotFoundException;
 import com.capitole.challenge.infrastructure.db.ProductPriceRepository;
 import com.capitole.challenge.infrastructure.db.mapper.ProductPriceModelMapper;
-import com.capitole.challenge.infrastructure.model.ProductPriceModel;
+import com.capitole.challenge.infrastructure.db.model.ProductPriceModel;
 
 import java.time.LocalDateTime;
 import java.util.Collections;

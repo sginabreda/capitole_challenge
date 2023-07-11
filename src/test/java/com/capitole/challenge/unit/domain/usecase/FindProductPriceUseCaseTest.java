@@ -4,12 +4,12 @@ import com.capitole.challenge.domain.entity.ProductPrice;
 import com.capitole.challenge.domain.exception.ProductPriceNotFoundException;
 import com.capitole.challenge.domain.usecase.FindProductPriceUseCase;
 import com.capitole.challenge.infrastructure.db.ProductPriceRepository;
-import com.capitole.challenge.infrastructure.model.ProductPriceModel;
+import com.capitole.challenge.infrastructure.db.model.ProductPriceModel;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
-import org.junit.jupiter.api.Assertions;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

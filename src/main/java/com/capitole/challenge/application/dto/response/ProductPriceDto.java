@@ -1,4 +1,4 @@
-package com.capitole.challenge.delivery.dto.response;
+package com.capitole.challenge.application.dto.response;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;

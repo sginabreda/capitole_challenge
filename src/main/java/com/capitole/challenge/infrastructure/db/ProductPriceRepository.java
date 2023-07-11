@@ -1,6 +1,6 @@
 package com.capitole.challenge.infrastructure.db;
 
-import com.capitole.challenge.infrastructure.model.ProductPriceModel;
+import com.capitole.challenge.infrastructure.db.model.ProductPriceModel;
 import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

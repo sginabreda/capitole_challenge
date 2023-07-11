@@ -1,4 +1,4 @@
-package com.capitole.challenge.infrastructure.model;
+package com.capitole.challenge.infrastructure.db.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

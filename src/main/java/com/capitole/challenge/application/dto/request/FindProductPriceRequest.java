@@ -1,4 +1,4 @@
-package com.capitole.challenge.delivery.dto.request;
+package com.capitole.challenge.application.dto.request;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;

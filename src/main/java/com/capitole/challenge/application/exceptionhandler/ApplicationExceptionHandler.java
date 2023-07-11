@@ -1,6 +1,6 @@
 package com.capitole.challenge.application.exceptionhandler;
 
-import com.capitole.challenge.delivery.dto.response.ApiErrorDto;
+import com.capitole.challenge.application.dto.response.ApiErrorDto;
 import com.capitole.challenge.domain.exception.ProductPriceNotFoundException;
 import java.util.Objects;
 import org.springframework.http.HttpHeaders;
